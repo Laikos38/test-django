@@ -11,7 +11,14 @@ def get_all_user_items(user_id: int) -> QuerySet[Item]:
 
 
 def register_item(item_data: ItemInSchema, owner_id: int) -> int:
-    return Item.objects.create(name=item_data.name, description=item_data.description, owner_id=owner_id).id
+    return Item.objects.create(
+        name=item_data.name,
+        description=item_data.description,
+        attack=item_data.attack,
+        defense=item_data.defense,
+        magic=item_data.magic,
+        owner_id=owner_id,
+    ).id
 
 
 def get_item_by_id(item_id: int, owner_id: int) -> Item:

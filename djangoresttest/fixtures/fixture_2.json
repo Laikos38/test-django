@@ -1,0 +1,72 @@
+[
+  {
+    "model": "api.item",
+    "pk": 1,
+    "fields": {
+      "creation_datetime": "2022-06-25T20:15:20.843Z",
+      "deletion_datetime": null,
+      "name": "Enchanted sword",
+      "description": "Legendary elf sword.",
+      "owner": 1,
+      "attack": 5,
+      "defense": -3,
+      "magic": 9
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 2,
+    "fields": {
+      "creation_datetime": "2022-06-25T20:20:20.843Z",
+      "deletion_datetime": null,
+      "name": "Iron helmet",
+      "description": "",
+      "owner": 1,
+      "attack": 0,
+      "defense": 5,
+      "magic": 0
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 3,
+    "fields": {
+      "creation_datetime": "2022-06-25T20:15:25.843Z",
+      "deletion_datetime": null,
+      "name": "Profecy book",
+      "description": "Legendary magic book.",
+      "owner": 1,
+      "attack": 1,
+      "defense": 0,
+      "magic": 10
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 4,
+    "fields": {
+      "creation_datetime": "2022-06-25T20:15:30.843Z",
+      "deletion_datetime": null,
+      "name": "Divine sword",
+      "description": "Legendary fighter sword.",
+      "owner": 2,
+      "attack": 10,
+      "defense": 5,
+      "magic": -5
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 5,
+    "fields": {
+      "creation_datetime": "2022-06-25T20:15:35.843Z",
+      "deletion_datetime": null,
+      "name": "Health cape",
+      "description": "Magical cape.",
+      "owner": 2,
+      "attack": -5,
+      "defense": 8,
+      "magic": 8
+    }
+  }
+]
