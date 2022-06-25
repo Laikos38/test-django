@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from ninja import NinjaAPI
 
 from djangoresttest.api.urls import router as api_v1_router
-from djangoresttest.api.utils.exceptions.base_exception import exception_handler
+from djangoresttest.api.utils.exceptions.exception_handler import exception_handler
 
 api = NinjaAPI(
     title="Django REST Test API",

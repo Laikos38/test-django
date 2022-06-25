@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Generic, Optional
 
 from django.conf import settings
@@ -5,11 +6,21 @@ from django.core.paginator import Paginator
 from django.db.models import QuerySet
 from django.http import HttpRequest
 from ninja.schema import Schema
+from pydantic.generics import GenericModel
 
 from djangoresttest.api.types.types import T
 
 
-class Response(Schema, Generic[T]):
+def to_camel(string: str) -> str:
+    return "".join(word.capitalize() for word in string.split("_"))
+
+
+class BaseSchema(Schema):
+    creation_datetime: datetime
+    deletion_datetime: Optional[datetime]
+
+
+class Response(Schema, GenericModel, Generic[T]):
     ok: bool = True
     description: str = "OK"
     status_code: int
@@ -19,7 +30,7 @@ class Response(Schema, Generic[T]):
         arbitrary_types_allowed = True
 
 
-class PaginatedResponse(Schema, Generic[T]):
+class PaginatedResponse(Schema, GenericModel, Generic[T]):
     ok: bool = True
     description: str = "OK"
     status_code: int
