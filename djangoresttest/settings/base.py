@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "djangoresttest.api",
-    "djangoresttest.core",
     "djangoresttest.client",
 ]
 
@@ -122,3 +121,6 @@ STATIC_ROOT = str(BASE_DIR) + "/static/"
 # Media files
 MEDIA_URL = "/files/"
 MEDIA_ROOT = str(BASE_DIR) + "/files/"
+
+# Pagination settings
+PAGINATOR_QUANTITY_PER_PAGE = 15
