@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.urls import path
 from django.views.generic import TemplateView
@@ -17,7 +18,7 @@ api.add_router("v1/", api_v1_router)
 
 urlpatterns = [
     path("api/", api.urls),
-    path("", TemplateView.as_view(template_name="client/index.html")),
+    url(r"", TemplateView.as_view(template_name="client/index.html")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # noqa

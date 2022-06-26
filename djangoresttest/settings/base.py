@@ -1,3 +1,4 @@
+import datetime
 from pathlib import Path
 
 from decouple import config
@@ -27,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "ninja",
     "djangoresttest.api",
     "djangoresttest.client",
@@ -40,6 +42,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "djangoresttest.urls"
@@ -96,6 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+JWT_AUTH = {
+    "JWT_ALLOW_REFRESH": True,
+    "JWT_EXPIRATION_DELTA": datetime.timedelta(seconds=36000),
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -124,4 +132,7 @@ MEDIA_URL = "/files/"
 MEDIA_ROOT = str(BASE_DIR) + "/files/"
 
 # Pagination settings
-PAGINATOR_QUANTITY_PER_PAGE = 15
+PAGINATOR_QUANTITY_PER_PAGE = 5
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True
