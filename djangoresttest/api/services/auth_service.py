@@ -2,7 +2,6 @@ from calendar import timegm
 from datetime import datetime
 from typing import Optional
 
-from django.conf import settings
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from django.http.request import HttpRequest
@@ -69,10 +68,7 @@ class ApiKey(APIKeyHeader):
         if not key:
             raise BaseException("Unauthorized", "401")
         try:
-            if settings.DEBUG and " " not in key:
-                keyword = "JWT"
-            else:
-                keyword, key = key.split()
+            keyword, key = key.split()
             if keyword != "JWT":
                 raise Exception()
             payload = jwt_decode_handler(key)

@@ -11,7 +11,7 @@ from djangoresttest.api.utils.exceptions.not_found_exception import NotFoundExce
 
 
 def exception_handler(request, exc) -> HttpResponse:
-    response = Response(ok=False, status_code=500, description="Error")
+    response: Response = Response(ok=False, status_code=500, description="Error")
     if settings.DEBUG:
         response.data = f"{traceback.format_exc()}"
     if isinstance(exc, NotFoundException):
