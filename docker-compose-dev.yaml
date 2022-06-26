@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  djangoresttest_db:
+    image: postgres
+    container_name: djangoresttest_db
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=djangoresttest
+    network_mode: "host"
+
+
+  djangoresttest_backend:
+    container_name: djangoresttest_backend
+    build: .
+    entrypoint: "/usr/src/app/scripts/entrypoint.sh"
+    depends_on:
+      - djangoresttest_db
+    network_mode: "host"
