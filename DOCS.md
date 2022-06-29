@@ -20,4 +20,4 @@ Se divide en 3 capas simples:
 
 Los **schemas** son utilizados por Django Ninja para validar y formatear la data entrante y saliente de los endpoints, permitiendo una buena integración con los IDEs y editores gracias a typehints.
 
-Las **políticas** implementadas exponen métodos de consulta de los modelos en base al usuario loggeado que intenta acceder a la información, previniendo vulnerabilidades tipo IDOR.
+Las **políticas** implementadas exponen métodos de consulta de los modelos según el usuario loggeado que intenta acceder a la información, previniendo vulnerabilidades tipo IDOR.
