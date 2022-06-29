@@ -15,8 +15,11 @@ python manage.py runserver
 
 ### Docker
 ```bash
-docker-compose -f docker-compose-dev.yaml up 
+docker-compose -f docker-compose-dev.yaml up --build
 ```
+
+> The app will run in **http://localhost:7171**
+
 -------------
 ## Login
 With the app already running, login with one of these users:

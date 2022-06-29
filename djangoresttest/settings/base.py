@@ -73,7 +73,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": config("DB_NAME", default="djangoresttest"),
-        "HOST": config("DB_HOST", default="127.0.0.1"),
+        "HOST": config("DB_HOST", default="djangoresttest_db"),
         "PORT": config("DB_PORT", default="5432", cast=int),
         "USER": config("DB_USER", default="postgres"),
         "PASSWORD": config("DB_PASSWORD", default="postgres"),
